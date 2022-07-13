@@ -2,9 +2,10 @@ on: workflow_dispatch
 jobs:
   build-all:
     runs-on: ubuntu-22.04
+    container: buildroot/base:20211120.1925
     strategy:
       matrix:
-        config: [ st_stm32mp157a_dk1_defconfig, st_stm32mp157a_dk1_demo_defconfig, st_stm32mp157d_dk1_defconfig, st_stm32mp157d_dk1_demo_defconfig, st_stm32mp157c_dk2_defconfig, st_stm32mp157c_dk2_demo_defconfig, st_stm32mp157f_dk2_defconfig, st_stm32mp157f_dk2_demo_defconfig, st_stm32mp135f_dk_defconfig, st_stm32mp135f_dk_demo_defconfig ]
+        config: [ st_stm32mp157a_dk1_defconfig ]
     steps:
       - uses: actions/checkout@v2
         with:
